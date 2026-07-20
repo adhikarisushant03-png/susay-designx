@@ -1,154 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>SUSAY DESIGNX | Creative Studio</title>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-}
-
-body{
-background:#050505;
-color:white;
-overflow-x:hidden;
-}
-
-header{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-background:
-linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.9)),
-url("https://images.unsplash.com/photo-1558655146-d09347e92766");
-background-size:cover;
-background-position:center;
-}
-
-.hero h1{
-font-size:80px;
-font-weight:800;
-letter-spacing:5px;
-animation:fade 2s;
-}
-
-.hero span{
-color:#d4af37;
-}
-
-.hero p{
-font-size:22px;
-margin:20px;
-color:#ccc;
-}
-
-.btn{
-padding:15px 40px;
-border:1px solid #d4af37;
-color:white;
-text-decoration:none;
-border-radius:50px;
-transition:.4s;
-}
-
-.btn:hover{
-background:#d4af37;
-color:black;
-}
-
-
-section{
-padding:80px 10%;
-}
-
-.title{
-font-size:45px;
-text-align:center;
-margin-bottom:50px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.card{
-background:#111;
-padding:35px;
-border-radius:20px;
-border:1px solid #222;
-transition:.5s;
-}
-
-.card:hover{
-transform:translateY(-15px);
-border-color:#d4af37;
-}
-
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.gallery img{
-width:100%;
-height:250px;
-object-fit:cover;
-border-radius:20px;
-transition:.5s;
-}
-
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-
-.contact{
-text-align:center;
-background:#111;
-}
-
-footer{
-text-align:center;
-padding:25px;
-color:#aaa;
-}
-
-
-@keyframes fade{
-from{
-opacity:0;
-transform:translateY(50px);
-}
-to{
-opacity:1;
-}
-}
-
-
-@media(max-width:700px){
-
-.hero h1{
-font-size:45px;
-}
-
-.title{
-font-size:32px;
-}
-
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -156,121 +16,379 @@ font-size:32px;
 <body>
 
 
-<header>
+<!-- LOADING SCREEN -->
 
-<div class="hero">
+<div class="loader">
 
-<h1>SUSAY <span>DESIGNX</span></h1>
+<div class="loader-logo">
+SUSAY <span>DESIGNX</span>
+</div>
+
+</div>
+
+
+
+<!-- CURSOR -->
+
+<div class="cursor"></div>
+
+
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+SUSAY <span>DESIGNX</span>
+</div>
+
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#services">Services</a></li>
+
+<li><a href="#work">Portfolio</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+
+
+
+
+
+<!-- HERO -->
+
+<section id="home" class="hero">
+
+
+<div class="particles"></div>
+
+
+<div class="hero-content">
+
+
+<h1>
+
+WE CREATE
+
+<br>
+
+<span>VISUAL STORIES</span>
+
+</h1>
+
 
 <p>
-Creative Designs That Tell Powerful Stories
+Graphic Design • Branding • Digital Creativity
 </p>
 
-<a class="btn" href="#portfolio">
-View Portfolio
+
+<a href="#work" class="btn">
+Explore Works
 </a>
 
+
 </div>
 
-</header>
+</section>
 
 
 
-<section>
 
-<h2 class="title">About Us</h2>
 
-<p style="text-align:center;color:#bbb;font-size:18px">
-Susay Designx is a creative design studio focused on
-branding, visual identity, digital artwork and modern
-creative solutions.
+
+
+
+<!-- ABOUT -->
+
+
+<section id="about" class="section">
+
+
+<h2>
+ABOUT SUSAY DESIGNX
+</h2>
+
+
+<p>
+
+Susay Designx is a creative design studio creating
+premium logos, brand identities, posters,
+social media designs and digital experiences.
+
 </p>
 
-</section>
-
-
-
-<section>
-
-<h2 class="title">Services</h2>
-
-<div class="cards">
-
-<div class="card">
-<h2>Logo Design</h2>
-<p>Unique brand identities made to be remembered.</p>
-</div>
-
-
-<div class="card">
-<h2>Brand Identity</h2>
-<p>Complete visual systems for modern brands.</p>
-</div>
-
-
-<div class="card">
-<h2>Poster Design</h2>
-<p>Cinematic posters and promotional graphics.</p>
-</div>
-
-
-<div class="card">
-<h2>Thumbnail Design</h2>
-<p>High CTR YouTube thumbnail designs.</p>
-</div>
-
-
-</div>
 
 </section>
 
 
 
 
-<section id="portfolio">
 
-<h2 class="title">
-Portfolio
+
+
+
+<!-- SERVICES -->
+
+
+<section id="services" class="section">
+
+
+<h2>
+OUR SERVICES
 </h2>
+
+
+<div class="service-box">
+
+
+<div class="card">
+<h3>Logo Design</h3>
+<p>Unique logos that build memorable brands.</p>
+</div>
+
+
+<div class="card">
+<h3>Brand Identity</h3>
+<p>Complete branding solutions for businesses.</p>
+</div>
+
+
+<div class="card">
+<h3>Poster & Banner</h3>
+<p>Cinematic promotional graphics.</p>
+</div>
+
+
+<div class="card">
+<h3>YouTube Thumbnail</h3>
+<p>High quality thumbnails for creators.</p>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- PORTFOLIO -->
+
+
+<section id="work" class="section">
+
+
+<h2>
+OUR PORTFOLIO
+</h2>
+
+
+
+
+
+<!-- LOGO DESIGN -->
+
+<h3 class="category-title">
+LOGO DESIGN
+</h3>
 
 
 <div class="gallery">
 
-<img src="images/work1.jpg">
-<img src="images/work2.jpg">
-<img src="images/work3.jpg">
-<img src="images/work4.jpg">
+
+<img src="assets/logo-design/logo1.jpg">
+
+<img src="assets/logo-design/logo2.jpg">
+
+<img src="assets/logo-design/logo3.jpg">
+
 
 </div>
 
 
+
+
+
+
+
+
+<!-- BRAND IDENTITY -->
+
+
+<h3 class="category-title">
+BRAND IDENTITY
+</h3>
+
+
+<div class="gallery">
+
+
+<img src="assets/brand-identity/brand1.jpg">
+
+<img src="assets/brand-identity/brand2.jpg">
+
+<img src="assets/brand-identity/brand3.jpg">
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- YOUTUBE THUMBNAILS -->
+
+
+<h3 class="category-title">
+YOUTUBE THUMBNAILS
+</h3>
+
+
+<div class="gallery">
+
+
+<img src="assets/youtube-thumbnail/thumb1.jpg">
+
+<img src="assets/youtube-thumbnail/thumb2.jpg">
+
+<img src="assets/youtube-thumbnail/thumb3.jpg">
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- BANNER DESIGN -->
+
+
+<h3 class="category-title">
+BANNER DESIGN
+</h3>
+
+
+<div class="gallery">
+
+
+<img src="assets/banner-design/banner1.jpg">
+
+<img src="assets/banner-design/banner2.jpg">
+
+<img src="assets/banner-design/banner3.jpg">
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- POSTER DESIGN -->
+
+
+<h3 class="category-title">
+POSTER DESIGN
+</h3>
+
+
+<div class="gallery">
+
+
+<img src="assets/poster-design/poster1.jpg">
+
+<img src="assets/poster-design/poster2.jpg">
+
+<img src="assets/poster-design/poster3.jpg">
+
+
+</div>
+
+
+
 </section>
 
 
 
 
-<section class="contact">
 
-<h2 class="title">
-Let's Create Something Amazing
+
+
+
+
+<!-- CONTACT -->
+
+
+<section id="contact" class="contact">
+
+
+<h2>
+LET'S CREATE TOGETHER
 </h2>
 
+
 <p>
-Instagram | Facebook | Email | WhatsApp
+Instagram | Facebook | WhatsApp | Email
 </p>
 
+
+<a class="btn">
+Contact Us
+</a>
+
+
 </section>
+
+
+
+
 
 
 
 <footer>
 
-© 2026 SUSAY DESIGNX  
+© 2026 SUSAY DESIGNX
+
 <br>
+
 Every Design Has A Story
 
 </footer>
 
 
+
+
+
+<script src="script.js"></script>
+
+
 </body>
+
 </html>
