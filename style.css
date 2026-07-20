@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap');
 
-
 *{
 margin:0;
 padding:0;
@@ -15,13 +14,14 @@ body{
 background:#050505;
 color:white;
 overflow-x:hidden;
-position:relative;
 
 }
 
 
+/* =====================
+   LOADING SCREEN
+===================== */
 
-/* LOADER */
 
 .loader{
 
@@ -29,10 +29,13 @@ position:fixed;
 height:100vh;
 width:100%;
 background:#000;
+
 display:flex;
 align-items:center;
 justify-content:center;
+
 z-index:9999;
+
 animation:loaderHide 3s forwards;
 
 }
@@ -43,6 +46,7 @@ animation:loaderHide 3s forwards;
 font-size:45px;
 font-weight:800;
 letter-spacing:5px;
+
 animation:zoom 2s;
 
 }
@@ -60,13 +64,17 @@ color:#d4af37;
 @keyframes zoom{
 
 from{
+
 opacity:0;
 transform:scale(.5);
+
 }
 
 to{
+
 opacity:1;
 transform:scale(1);
+
 }
 
 }
@@ -76,32 +84,42 @@ transform:scale(1);
 @keyframes loaderHide{
 
 0%,80%{
+
 opacity:1;
+
 }
 
 100%{
+
 opacity:0;
 visibility:hidden;
-}
 
 }
 
+}
 
 
 
 
-
-/* CURSOR */
+/* =====================
+   CUSTOM CURSOR
+===================== */
 
 
 .cursor{
 
 position:fixed;
+
 height:25px;
+
 width:25px;
+
 border:2px solid #d4af37;
+
 border-radius:50%;
+
 pointer-events:none;
+
 z-index:999;
 
 }
@@ -111,51 +129,72 @@ z-index:999;
 
 
 
-/* NAVBAR */
+/* =====================
+   NAVBAR
+===================== */
 
 
 nav{
 
 position:fixed;
-top:0;
-width:100%;
-padding:25px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:100;
 
-background:rgba(0,0,0,.4);
+top:0;
+
+width:100%;
+
+padding:25px 8%;
+
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+
+background:rgba(0,0,0,.45);
 
 backdrop-filter:blur(15px);
 
+
+z-index:100;
+
 }
+
 
 
 .logo{
 
 font-size:25px;
+
 font-weight:800;
 
 }
 
 
+
 nav ul{
 
 display:flex;
+
 gap:30px;
+
 list-style:none;
 
 }
 
 
+
 nav a{
 
-color:white;
 text-decoration:none;
+
+color:white;
+
 transition:.3s;
 
 }
+
 
 
 nav a:hover{
@@ -171,96 +210,147 @@ color:#d4af37;
 
 
 
-/* HERO */
+/* =====================
+   LUXURY STUDIO HERO
+===================== */
 
 
 .hero{
 
+
 height:100vh;
+
+
 display:flex;
+
 align-items:center;
+
 justify-content:center;
+
+
 text-align:center;
 
+
 position:relative;
+
 
 overflow:hidden;
 
 
+
 background:
 
-radial-gradient(circle at 20% 20%,rgba(212,175,55,.18),transparent 35%),
 
-radial-gradient(circle at 80% 70%,rgba(255,255,255,.08),transparent 30%),
+linear-gradient(
+rgba(0,0,0,.72),
+rgba(0,0,0,.92)
+),
 
-linear-gradient(135deg,#050505,#111,#050505);
+
+url("assets/studio-bg.jpg");
+
+
+
+background-size:cover;
+
+
+background-position:center;
+
+
+background-attachment:fixed;
 
 
 }
+
+
+
 
 
 
 .hero::before{
 
+
 content:"";
 
 position:absolute;
 
-width:500px;
-height:500px;
+inset:0;
 
-background:#d4af37;
 
-filter:blur(180px);
 
-opacity:.15;
+background:
 
-top:-150px;
-left:-150px;
+radial-gradient(
 
-animation:glowMove 8s infinite alternate;
+circle at center,
+
+transparent 20%,
+
+rgba(0,0,0,.85)
+
+);
+
+
+
+z-index:1;
+
 
 }
+
+
+
 
 
 
 .hero::after{
 
+
 content:"";
 
 position:absolute;
 
-width:400px;
-height:400px;
 
-background:white;
 
-filter:blur(200px);
+width:650px;
 
-opacity:.08;
+height:650px;
 
-bottom:-100px;
-right:-100px;
 
-animation:glowMove 10s infinite alternate;
-
-}
+border-radius:50%;
 
 
 
-@keyframes glowMove{
+background:
 
-from{
 
-transform:translate(0,0);
+radial-gradient(
 
-}
+circle,
 
-to{
+rgba(212,175,55,.35),
 
-transform:translate(120px,80px);
+transparent 70%
 
-}
+);
+
+
+
+filter:blur(100px);
+
+
+
+top:-200px;
+
+right:-200px;
+
+
+
+animation:studioGlow 12s infinite alternate;
+
+
+
+z-index:2;
+
 
 }
 
@@ -270,114 +360,144 @@ transform:translate(120px,80px);
 
 .particles{
 
+
 position:absolute;
 
-width:100%;
-height:100%;
+
+inset:0;
+
 
 
 background-image:
 
-linear-gradient(
-rgba(255,255,255,.04) 1px,
-transparent 1px
+
+
+radial-gradient(
+
+circle,
+
+rgba(212,175,55,.8) 1px,
+
+transparent 2px
+
 ),
 
-linear-gradient(
-90deg,
-rgba(255,255,255,.04) 1px,
-transparent 1px
+
+
+radial-gradient(
+
+circle,
+
+rgba(255,255,255,.6) 1px,
+
+transparent 2px
+
 );
 
 
-background-size:70px 70px;
+
+background-size:
+
+
+120px 120px,
+
+200px 200px;
+
 
 
 opacity:.25;
 
 
-animation:gridMove 20s linear infinite;
+
+animation:dustMove 20s linear infinite;
+
+
+
+z-index:3;
 
 
 }
-
-
-
-@keyframes gridMove{
-
-from{
-
-background-position:0 0;
-
-}
-
-
-to{
-
-background-position:500px 500px;
-
-}
-
-}
-
 
 
 
 
 .hero-content{
 
-z-index:2;
 
-transition:.3s;
+position:relative;
+
+
+z-index:5;
+
+
+
+animation:heroEnter 2s ease;
+
 
 }
+
+
 
 
 
 .hero h1{
 
+
 font-size:90px;
+
 
 font-weight:800;
 
+
 letter-spacing:5px;
+
 
 line-height:1.1;
 
+
 }
+
 
 
 
 .hero p{
 
+
 font-size:20px;
 
 color:#aaa;
 
+
 margin:30px;
+
 
 }
 
 
 
-
-
-
 .btn{
+
 
 display:inline-block;
 
+
 padding:15px 45px;
+
 
 border:1px solid #d4af37;
 
+
 border-radius:50px;
+
 
 color:white;
 
+
 text-decoration:none;
 
+
 transition:.5s;
+
 
 }
 
@@ -385,11 +505,79 @@ transition:.5s;
 
 .btn:hover{
 
+
 background:#d4af37;
+
 
 color:black;
 
+
 transform:translateY(-5px);
+
+
+}
+/* =====================
+   HERO ANIMATIONS
+===================== */
+
+
+@keyframes studioGlow{
+
+0%{
+
+transform:translate(0,0) scale(1);
+
+}
+
+100%{
+
+transform:translate(-150px,120px) scale(1.3);
+
+}
+
+}
+
+
+
+@keyframes dustMove{
+
+0%{
+
+background-position:
+0 0,
+50px 100px;
+
+}
+
+100%{
+
+background-position:
+600px 700px,
+-400px 500px;
+
+}
+
+}
+
+
+
+@keyframes heroEnter{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
 
 }
 
@@ -397,11 +585,9 @@ transform:translateY(-5px);
 
 
 
-
-
-
-
-/* SECTIONS */
+/* =====================
+   SECTIONS
+===================== */
 
 
 .section{
@@ -417,11 +603,13 @@ text-align:center;
 .section h2,
 .contact h2{
 
+
 font-size:45px;
+
+letter-spacing:3px;
 
 margin-bottom:40px;
 
-letter-spacing:3px;
 
 }
 
@@ -429,11 +617,13 @@ letter-spacing:3px;
 
 .section p{
 
+
 color:#aaa;
 
 font-size:18px;
 
 line-height:2;
+
 
 }
 
@@ -443,16 +633,22 @@ line-height:2;
 
 
 
-/* SERVICES */
+/* =====================
+   SERVICES CARDS
+===================== */
 
 
 .service-box{
 
+
 display:grid;
+
 
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 
+
 gap:30px;
+
 
 }
 
@@ -460,40 +656,62 @@ gap:30px;
 
 .card{
 
+
 background:
 
-linear-gradient(145deg,#151515,#080808);
+linear-gradient(
+145deg,
+#171717,
+#080808
+);
+
 
 
 padding:40px;
 
+
 border-radius:25px;
+
 
 border:1px solid #222;
 
+
 transition:.5s;
 
+
 }
+
 
 
 
 .card:hover{
 
+
 transform:translateY(-15px);
+
 
 border-color:#d4af37;
 
-box-shadow:0 0 30px rgba(212,175,55,.3);
+
+box-shadow:
+
+0 0 35px rgba(212,175,55,.3);
+
 
 }
+
+
 
 
 
 .card h3{
 
+
 color:#d4af37;
 
+
 margin-bottom:20px;
+
 
 }
 
@@ -504,16 +722,24 @@ margin-bottom:20px;
 
 
 
-/* PORTFOLIO */
+/* =====================
+   PORTFOLIO
+===================== */
 
 
 .gallery{
 
+
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+grid-template-columns:
+
+repeat(auto-fit,minmax(280px,1fr));
+
 
 gap:25px;
+
 
 }
 
@@ -521,15 +747,21 @@ gap:25px;
 
 .gallery img{
 
+
 width:100%;
+
 
 height:350px;
 
+
 object-fit:cover;
+
 
 border-radius:25px;
 
+
 transition:.7s;
+
 
 }
 
@@ -537,22 +769,36 @@ transition:.7s;
 
 .gallery img:hover{
 
+
 transform:scale(1.08);
 
+
+box-shadow:
+
+0 0 30px rgba(212,175,55,.25);
+
+
 }
+
+
 
 
 
 
 .category-title{
 
+
 margin:70px 0 30px;
+
 
 font-size:30px;
 
+
 color:#d4af37;
 
+
 letter-spacing:3px;
+
 
 }
 
@@ -563,18 +809,26 @@ letter-spacing:3px;
 
 
 
-/* PROCESS */
+
+/* =====================
+   PROCESS SECTION
+===================== */
 
 
 .process{
 
+
 display:flex;
+
 
 justify-content:center;
 
+
 gap:40px;
 
+
 flex-wrap:wrap;
+
 
 }
 
@@ -582,23 +836,34 @@ flex-wrap:wrap;
 
 .process div{
 
+
 width:180px;
+
 
 height:180px;
 
+
 border-radius:50%;
+
 
 display:flex;
 
+
 align-items:center;
+
 
 justify-content:center;
 
+
+
 background:#111;
+
 
 border:1px solid #333;
 
+
 transition:.5s;
+
 
 }
 
@@ -606,9 +871,12 @@ transition:.5s;
 
 .process div:hover{
 
+
 border-color:#d4af37;
 
+
 transform:scale(1.1);
+
 
 }
 
@@ -618,31 +886,63 @@ transform:scale(1.1);
 
 
 
-/* CONTACT */
+
+
+/* =====================
+   CONTACT
+===================== */
 
 
 .contact{
 
+
 padding:100px 10%;
+
 
 background:#111;
 
+
 text-align:center;
+
 
 }
 
 
 
 
+.contact p{
+
+
+color:#aaa;
+
+margin-bottom:30px;
+
+}
+
+
+
+
+
+
+/* =====================
+   FOOTER
+===================== */
 
 
 footer{
 
+
 padding:30px;
+
 
 text-align:center;
 
+
 color:#777;
+
+
+background:#050505;
+
 
 }
 
@@ -652,390 +952,112 @@ color:#777;
 
 
 
-/* MOBILE */
+/* =====================
+   SCROLL ANIMATION
+===================== */
+
+
+.reveal{
+
+
+opacity:0;
+
+
+transform:translateY(50px);
+
+
+transition:1s;
+
+
+}
+
+
+
+.reveal.active{
+
+
+opacity:1;
+
+
+transform:translateY(0);
+
+
+}
+
+
+
+
+
+
+
+/* =====================
+   MOBILE RESPONSIVE
+===================== */
 
 
 @media(max-width:700px){
 
 
+
 nav ul{
+
 
 display:none;
 
+
 }
+
+
+
+.logo{
+
+
+font-size:20px;
+
+
+}
+
 
 
 .hero h1{
 
+
 font-size:45px;
 
+
 }
+
+
+
+.hero p{
+
+
+font-size:15px;
+
+
+}
+
 
 
 .section h2,
 .contact h2{
 
+
 font-size:30px;
 
-}
-
-
-}
-/* LUXURY CREATIVE STUDIO BACKGROUND */
-
-.hero{
-position:relative;
-overflow:hidden;
-background:
-radial-gradient(circle at 20% 20%, rgba(212,175,55,.18), transparent 35%),
-radial-gradient(circle at 80% 80%, rgba(255,255,255,.08), transparent 30%),
-linear-gradient(135deg,#050505,#111,#050505);
-}
-
-
-/* GOLD LIGHT GLOW */
-
-.hero::before{
-
-content:"";
-position:absolute;
-
-width:600px;
-height:600px;
-
-background:#d4af37;
-
-filter:blur(180px);
-
-opacity:.18;
-
-top:-200px;
-left:-200px;
-
-animation:goldMove 10s infinite alternate;
 
 }
 
 
 
-/* WHITE CINEMATIC LIGHT */
+.gallery img{
 
-.hero::after{
 
-content:"";
-position:absolute;
+height:250px;
 
-width:500px;
-height:500px;
-
-background:white;
-
-filter:blur(220px);
-
-opacity:.08;
-
-bottom:-200px;
-right:-200px;
-
-animation:whiteMove 12s infinite alternate;
 
 }
 
 
-
-/* MOVING GLITTER */
-
-.particles{
-
-position:absolute;
-width:100%;
-height:100%;
-
-background-image:
-
-radial-gradient(circle,rgba(212,175,55,.8) 1px,transparent 2px),
-radial-gradient(circle,rgba(255,255,255,.7) 1px,transparent 2px);
-
-background-size:
-
-140px 140px,
-220px 220px;
-
-background-position:
-
-0 0,
-80px 100px;
-
-
-opacity:.35;
-
-animation:sparkle 18s linear infinite;
-
-}
-
-
-
-
-@keyframes sparkle{
-
-from{
-
-background-position:
-0 0,
-80px 100px;
-
-}
-
-to{
-
-background-position:
-500px 600px,
--400px 500px;
-
-}
-
-}
-
-
-
-@keyframes goldMove{
-
-from{
-
-transform:translate(0,0);
-
-}
-
-to{
-
-transform:translate(150px,100px);
-
-}
-
-}
-
-
-
-@keyframes whiteMove{
-
-from{
-
-transform:translate(0,0);
-
-}
-
-to{
-
-transform:translate(-120px,-80px);
-
-}
-
-}
-/* ==============================
-   SUSAY DESIGNX LUXURY BACKGROUND
-   ============================== */
-
-
-.hero{
-position:relative;
-overflow:hidden;
-
-background:
-linear-gradient(135deg,#020202,#0d0d0d,#020202);
-
-}
-
-
-
-/* MOVING GOLD AURA */
-
-.hero::before{
-
-content:"";
-
-position:absolute;
-
-width:700px;
-height:700px;
-
-border-radius:50%;
-
-background:
-
-radial-gradient(circle,
-rgba(212,175,55,.35),
-transparent 65%);
-
-filter:blur(80px);
-
-top:-250px;
-left:-200px;
-
-animation:auraMove 12s infinite alternate;
-
-}
-
-
-
-
-/* SECOND LIGHT */
-
-.hero::after{
-
-content:"";
-
-position:absolute;
-
-width:600px;
-height:600px;
-
-border-radius:50%;
-
-background:
-
-radial-gradient(circle,
-rgba(255,255,255,.15),
-transparent 70%);
-
-filter:blur(100px);
-
-bottom:-250px;
-right:-200px;
-
-animation:auraMove2 15s infinite alternate;
-
-}
-
-
-
-
-
-/* PREMIUM PARTICLES */
-
-.particles{
-
-position:absolute;
-
-inset:0;
-
-
-background-image:
-
-radial-gradient(circle,
-rgba(212,175,55,.9) 1px,
-transparent 2px),
-
-radial-gradient(circle,
-rgba(255,255,255,.7) 1px,
-transparent 2px),
-
-radial-gradient(circle,
-rgba(212,175,55,.4) 2px,
-transparent 3px);
-
-
-background-size:
-
-90px 90px,
-150px 150px,
-250px 250px;
-
-
-background-position:
-
-0 0,
-40px 80px,
-100px 150px;
-
-
-opacity:.35;
-
-
-animation:particlesMove 25s linear infinite;
-
-}
-
-
-
-
-/* DARK GLASS VIGNETTE */
-
-.hero-content{
-
-position:relative;
-
-z-index:5;
-
-}
-
-
-
-.hero{
-
-box-shadow:
-inset 0 0 150px rgba(0,0,0,.9);
-
-}
-
-
-
-
-
-@keyframes auraMove{
-
-0%{
-
-transform:translate(0,0) scale(1);
-
-}
-
-100%{
-
-transform:translate(180px,120px) scale(1.3);
-
-}
-
-}
-
-
-
-@keyframes auraMove2{
-
-0%{
-
-transform:translate(0,0);
-
-}
-
-100%{
-
-transform:translate(-150px,-100px);
-
-}
-
-}
-
-
-
-@keyframes particlesMove{
-
-0%{
-
-background-position:
-0 0,
-40px 80px,
-100px 150px;
-
-}
-
-
-100%{
-
-background-position:
-600px 700px,
--300px 500px,
-400px -300px;
-
-}
 
 }
