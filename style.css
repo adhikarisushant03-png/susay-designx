@@ -727,83 +727,163 @@ margin-bottom:20px;
 ===================== */
 
 
-.gallery{
-
-
-display:grid;
-
-
-grid-template-columns:
-
-repeat(auto-fit,minmax(280px,1fr));
-
-
-gap:25px;
-
-
-}
-
-
-
-.gallery img{
-
-
-width:100%;
-
-
-height:350px;
-
-
-object-fit:cover;
-
-
-border-radius:25px;
-
-
-transition:.7s;
-
-
-}
-
-
-
-.gallery img:hover{
-
-
-transform:scale(1.08);
-
-
-box-shadow:
-
-0 0 30px rgba(212,175,55,.25);
-
-
-}
-
-
-
-
-
+/* ==========================
+        PORTFOLIO
+========================== */
 
 .category-title{
 
+margin:80px 0 35px;
 
-margin:70px 0 30px;
+font-size:34px;
 
+font-weight:700;
 
-font-size:30px;
+letter-spacing:4px;
 
+text-transform:uppercase;
 
 color:#d4af37;
-
-
-letter-spacing:3px;
-
 
 }
 
 
 
+/* ==========================
+      LOGO / BRAND
+========================== */
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
+margin-bottom:70px;
+
+}
+
+.gallery img{
+
+width:100%;
+
+aspect-ratio:1/1;
+
+object-fit:cover;
+
+border-radius:24px;
+
+transition:.5s;
+
+cursor:pointer;
+
+box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+}
+
+.gallery img:hover{
+
+transform:translateY(-12px) scale(1.03);
+
+box-shadow:0 25px 60px rgba(212,175,55,.35);
+
+}
+
+
+
+
+
+/* ==========================
+      YOUTUBE THUMBNAILS
+========================== */
+
+.landscape-gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+
+gap:35px;
+
+margin-bottom:70px;
+
+}
+
+.landscape-gallery img{
+
+width:100%;
+
+aspect-ratio:16/9;
+
+object-fit:cover;
+
+border-radius:22px;
+
+transition:.5s;
+
+cursor:pointer;
+
+box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+}
+
+.landscape-gallery img:hover{
+
+transform:translateY(-12px) scale(1.03);
+
+box-shadow:0 25px 60px rgba(212,175,55,.35);
+
+}
+
+
+
+
+
+/* ==========================
+      PORTRAIT BANNERS
+========================== */
+
+.portrait-gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+justify-content:center;
+
+gap:35px;
+
+margin-bottom:70px;
+
+}
+
+.portrait-gallery img{
+
+width:100%;
+
+aspect-ratio:4/5;
+
+object-fit:cover;
+
+border-radius:22px;
+
+transition:.5s;
+
+cursor:pointer;
+
+box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+}
+
+.portrait-gallery img:hover{
+
+transform:translateY(-12px) scale(1.03);
+
+box-shadow:0 25px 60px rgba(212,175,55,.35);
+
+}
 
 
 
